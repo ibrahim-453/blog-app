@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-
+import { useAuth } from "../context/AuthContext";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { user, logout } = useAuth();
   const nav = [
     { name: "Home", path: "/" },
     { name: "Blogs", path: "/blogs" },
@@ -36,7 +36,12 @@ function Header() {
             </NavLink>
           ))}
         </nav>
-
+          {
+            user ? 
+            (<button onClick={logout} className="bg-white text-cyan-600 px-3 py-1 rounded hover:bg-cyan-100">
+            Logout
+          </button>)
+          :
         <div className="hidden md:flex gap-3 text-white font-medium">
           <Link to="/login" className="bg-white text-cyan-600 px-3 py-1 rounded hover:bg-cyan-100">
             Login
@@ -48,6 +53,7 @@ function Header() {
             Sign Up
           </Link>
         </div>
+          }
 
         {/* Mobile Menu Button */}
         <button
