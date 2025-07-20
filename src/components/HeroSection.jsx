@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-r from-cyan-600 to-blue-600 text-white">
+    <section className="relative bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-700 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
           Welcome to <span className="text-yellow-300">MyBlog</span>
